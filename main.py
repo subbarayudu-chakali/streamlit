@@ -1,10 +1,24 @@
 import streamlit as st
 # import pandas as p
 
-st.title("AIA Insurance Hackathon - Team 27")
-st.header("Predicting the Insurance Premium")
+st.set_page_config(
+    page_title="AIA Insurance Hackathon",
+    page_icon="🧑‍💻",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items= {
+        'About': 'https://github.com/aia-hackathon/team-27',
+        'Get Help': "https://github.com/aia-hackathon/team-27",
+        'Report a bug': "https://github.com/aia-hackathon/team-27",
+    }
 
-st.file_uploader("Upload a CSV")
+)
+
+
+st.title("AIA Insurance Hackathon - Team 27")
+st.header("Predicting the Insurance Premium", divider='rainbow')
+
+st.file_uploader("Upload Claim Documents")
 
 st.markdown("WE ❤️️ A 👁️")
 
@@ -47,3 +61,16 @@ with tab4:
 
 with tab5:
     st.write("Explainability")
+
+code = '''def hello():
+    print("Hello, Streamlit!")
+    print("Hello, Streamlit!")
+    print("Hello, Streamlit!")
+    print("Hello, Streamlit!")'''
+st.code(code, language='python', line_numbers=True)
+
+st.latex(r'''
+    a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+    \sum_{k=0}^{n-1} ar^k =
+    a \left(\frac{1-r^{n}}{1-r}\right)
+    ''')
