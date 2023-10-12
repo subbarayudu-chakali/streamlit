@@ -16,26 +16,30 @@ st.set_page_config(
 
 
 st.title("AIA Insurance Hackathon - Team 27")
-st.header("Predicting the Insurance Premium", divider='rainbow')
+# st.header("Predicting the Insurance Premium", divider='rainbow')
 
-st.file_uploader("Upload Claim Documents")
+# create a sidebar for navigation
+st.sidebar.radio("Navigation", ["Home", "About", "Architecture", "Data Extraction", "Prediction", "Explainability"])
 
-st.markdown("WE ❤️️ A 👁️")
+# st.markdown("WE ❤️️ A 👁️")
 
 # create a form for the user to enter the data
 
-st.header("Validate the details of the policy holder")
+st.subheader("Please fill this form to start your :blue[insurance journey] :smiley:", divider="rainbow")
 form = st.form("my_form")
 name = form.text_input("Name")
 gender = form.radio("Gender", ["Male", "Female"])
-age = form.number_input("Age")
+# age = form.number_input("Age")
+age = form.slider('How old are you?', 0, 100, 25)
+# form.text("I'm " + age+" years old")
 occupation = form.text_input("Occupation")
-type_of_policy = form.selectbox("Type of Policy", ["Life", "Health", "Travel"])
+type_of_policy = form.selectbox("Type of Policy", ["Life", "Health", "Auto"])
 duration_of_policy = form.selectbox("Duration of Policy", [1, 3, 5, 10])
 no_of_insured_members = form.number_input("No. of Insured Members")
 policy_holder_type = form.selectbox("Policy Holder Type", ["Individual", "Company"])
 policy_holder_location = form.text_input("Policy Holder Location")
 medical_history = form.checkbox("Medical History")
+documents = form.file_uploader("Upload Documents", accept_multiple_files=True)
 submit_button = form.form_submit_button("Submit")
 
 st.checkbox("Do you want to explain how the premium was calculated?")
@@ -62,6 +66,9 @@ with tab4:
 with tab5:
     st.write("Explainability")
 
+
+# use these elements based on the requirement
+
 code = '''def hello():
     print("Hello, Streamlit!")
     print("Hello, Streamlit!")
@@ -74,3 +81,14 @@ st.latex(r'''
     \sum_{k=0}^{n-1} ar^k =
     a \left(\frac{1-r^{n}}{1-r}\right)
     ''')
+
+st.json({
+    'foo': 'bar',
+    'baz': 'boz',
+    'stuff': [
+        'stuff 1',
+        'stuff 2',
+        'stuff 3',
+        'stuff 5',
+    ],
+}, expanded=False)
