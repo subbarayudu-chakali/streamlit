@@ -10,7 +10,7 @@ def hit_api_gateway(api_url):
         st.success("API request successful!")
         st.write("Response:")
         st.write(response.json())  # Assumes the response is in JSON format
-        #
+
     except requests.exceptions.RequestException as e:
         st.error(f"Error making API request: {e}")
 

@@ -33,7 +33,7 @@ if files:
         st.write(f"Size: {file.size} bytes")
 
         # Specify S3 bucket and object name
-        bucket_name = "ai-insurance-docs"
+        bucket_name = "aia-hackathon-resources"
 
         # Upload the file to S3 on button click
         if st.button("Upload to S3"):

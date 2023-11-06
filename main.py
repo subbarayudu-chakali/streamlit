@@ -92,7 +92,7 @@ if documents:
         st.write(f"Type: {doc.type}")
         st.write(f"Size: {doc.size} bytes")
         # Specify S3 bucket and object name
-        bucket_name = "team27operation"
+        bucket_name = "aia-insurance-docs"
         if submit_button:
             object_name = doc.name
             file_content = doc.read()
